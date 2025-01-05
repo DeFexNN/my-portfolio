@@ -140,7 +140,7 @@ function About() {
                 onClick={handleViewProjects}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gray-700 text-yellow-500 px-6 py-2 rounded-lg font-semibold gradient-button"
+                className="bg-yellow-500 text-gray-900 px-6 py-2 rounded-lg font-semibold"
               >
                 View Projects
               </motion.button>

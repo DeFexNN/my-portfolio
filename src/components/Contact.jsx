@@ -4,7 +4,7 @@ import PageTransition from './PageTransition';
 function Contact() {
   return (
     <PageTransition>
-      <section className="modern-card">
+      <section className="bg-gray-900 p-12 rounded-lg shadow-2xl">
         <motion.h2
           className="text-3xl font-bold text-yellow-500 mb-6 text-center"
           initial={{ y: -20 }}
@@ -22,23 +22,27 @@ function Contact() {
           {['name', 'email', 'message'].map((field, index) => (
             <motion.div 
               key={field}
-              className="relative"
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: index * 0.2 }}
+              className="mb-6"
+              initial={{ x: -50 }}
+              animate={{ x: 0 }}
+              transition={{ delay: index * 0.1 }}
             >
-              <input
-                type={field === 'email' ? 'email' : 'text'}
-                placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                className="w-full p-4 bg-transparent border border-gray-700 rounded-lg 
-                          focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500 
-                          transition-all duration-300 outline-none"
-              />
-              <motion.div
-                className="absolute bottom-0 left-0 h-0.5 bg-yellow-500"
-                initial={{ width: "0%" }}
-                whileFocus={{ width: "100%" }}
-              />
+              <label className="block text-gray-400" htmlFor={field}>
+                {field.charAt(0).toUpperCase() + field.slice(1)}
+              </label>
+              {field === 'message' ? (
+                <textarea
+                  id={field}
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white"
+                  rows="4"
+                />
+              ) : (
+                <input
+                  type={field === 'email' ? 'email' : 'text'}
+                  id={field}
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white"
+                />
+              )}
             </motion.div>
           ))}
           

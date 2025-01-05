@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 :root {
@@ -19,6 +21,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll; /* Завжди показувати скролбар */
+  scrollbar-width: none; /* Для Firefox */
+  -ms-overflow-style: none; /* Для IE та Edge */
 }
 
 a {
@@ -45,7 +54,9 @@ body {
   display: flex;
   flex-direction: column;
   color: #e0e0e0;
+  overflow-y: auto;
   overflow-x: hidden;
+  margin-right: 0 !important; /* Запобігаємо автоматичному додаванню margin */
 }
 
 .App {
@@ -175,17 +186,38 @@ button:focus-visible {
 /* Стилізація карток */
 .modern-card {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 2rem;
-  transition: all 0.3s ease;
 }
 
 .modern-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Стилі для тексту в картках */
+.modern-card h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.modern-card p {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Прибираємо блюр з тексту */
+.modern-card * {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Прибираємо блюр з дочірніх елементів */
+.modern-card > * {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 /* Неонові ефекти */
@@ -201,23 +233,16 @@ button:focus-visible {
     0 0 151px #ffcc00;
 }
 
-/* Стилізація скролбару */
+/* Приховуємо скролбар для WebKit (Chrome, Safari, новіші версії Edge) */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ffcc00;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ffd700;
-}
+/* Видаляємо або коментуємо попередні стилі скролбара */
+/* ::-webkit-scrollbar { ... } */
+/* ::-webkit-scrollbar-track { ... } */
+/* ::-webkit-scrollbar-thumb { ... } */
+/* ::-webkit-scrollbar-thumb:hover { ... } */
 
 .glassmorphism {
   background: rgba(36, 36, 36, 0.8);
@@ -432,4 +457,16 @@ button:focus-visible {
     transform: translateY(-50%) scale(1);
     opacity: 0.5;
   }
+}
+
+/* Додаємо стилі для контейнера проектів */
+.grid {
+  --gap: 3rem;
+  gap: var(--gap);
+}
+
+/* Додаємо стилі для анімації розгортання */
+.overflow-hidden {
+  overflow: hidden;
+  will-change: height;
 }
