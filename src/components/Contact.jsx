@@ -2,59 +2,94 @@ import { motion } from 'framer-motion';
 import PageTransition from './PageTransition';
 
 function Contact() {
+  const socialLinks = [
+    { 
+      icon: "fa-brands fa-telegram", 
+      text: "Телеграм канал", 
+      description: "Приєднуйтесь до нашого каналу для останніх оновлень.",
+      url: "https://t.me/defexhacks",
+      color: "#0088cc"
+    },
+    { 
+      icon: "fa-brands fa-telegram", 
+      text: "Телеграм чат", 
+      description: "Спілкуйтесь з нами в нашому чаті.",
+      url: "https://t.me/defexchatix",
+      color: "#0088cc"
+    },
+    { 
+      icon: "fa-brands fa-telegram", 
+      text: "Личка телеграм", 
+      description: "Зв'яжіться зі мною особисто.",
+      url: "https://t.me/defexgg",
+      color: "#0088cc"
+    },
+    { 
+      icon: "fa-brands fa-instagram", 
+      text: "Інстаграм", 
+      description: "Слідкуйте за нашими фото та відео.",
+      url: "https://www.instagram.com/defex_tv/",
+      color: "#E1306C"
+    },
+    { 
+      icon: "fa-brands fa-youtube", 
+      text: "Ютуб", 
+      description: "Дивіться наші відео на YouTube.",
+      url: "https://www.youtube.com/channel/UC1P4rmz_sIUHGvxLoj1LSQA",
+      color: "#FF0000"
+    },
+    {
+      icon: "fa-solid fa-envelope",
+      text: "Email Me",
+      description: "Напишіть мені на пошту.",
+      url: "mailto:super.denchuk@gmail.com",
+      color: "#D44638"
+    }
+  ];
+
   return (
     <PageTransition>
-      <section className="bg-gray-900 p-12 rounded-lg shadow-2xl">
+      <section className="modern-card p-8">
         <motion.h2
-          className="text-3xl font-bold text-yellow-500 mb-6 text-center"
+          className="text-3xl font-bold text-yellow-500 mb-12 text-center"
           initial={{ y: -20 }}
           animate={{ y: 0 }}
         >
-          Contact Me
+          Let's Connect
         </motion.h2>
-        
-        <motion.form 
-          className="space-y-6"
+
+        <motion.div 
+          className="social-links-grid mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          {['name', 'email', 'message'].map((field, index) => (
-            <motion.div 
-              key={field}
-              className="mb-6"
-              initial={{ x: -50 }}
-              animate={{ x: 0 }}
+          {socialLinks.map((link, index) => (
+            <motion.a
+              key={link.url}
+              href={link.url}
+              className="social-button"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.05,
+                transition: { duration: 0.2 }
+              }}
+              style={{
+                '--hover-color': link.color
+              }}
             >
-              <label className="block text-gray-400" htmlFor={field}>
-                {field.charAt(0).toUpperCase() + field.slice(1)}
-              </label>
-              {field === 'message' ? (
-                <textarea
-                  id={field}
-                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white"
-                  rows="4"
-                />
-              ) : (
-                <input
-                  type={field === 'email' ? 'email' : 'text'}
-                  id={field}
-                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white"
-                />
-              )}
-            </motion.div>
+              <i className={link.icon} style={{ color: link.color }}></i>
+              <div className="social-button-content">
+                <span className="text-lg font-medium">{link.text}</span>
+                <p className="text-sm text-gray-400">{link.description}</p>
+              </div>
+            </motion.a>
           ))}
-          
-          <motion.button
-            type="submit"
-            className="bg-yellow-500 text-gray-900 p-3 rounded-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Submit
-          </motion.button>
-        </motion.form>
+        </motion.div>
       </section>
     </PageTransition>
   );
