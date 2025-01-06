@@ -5,43 +5,43 @@ function Contact() {
   const socialLinks = [
     { 
       icon: "fa-brands fa-telegram", 
-      text: "Телеграм канал", 
-      description: "Приєднуйтесь до нашого каналу для останніх оновлень.",
+      text: "Telegram Channel", 
+      description: "Join our channel for the latest updates.",
       url: "https://t.me/defexhacks",
       color: "#0088cc"
     },
     { 
       icon: "fa-brands fa-telegram", 
-      text: "Телеграм чат", 
-      description: "Спілкуйтесь з нами в нашому чаті.",
+      text: "Telegram Chat", 
+      description: "Chat with us in our group.",
       url: "https://t.me/defexchatix",
       color: "#0088cc"
     },
     { 
       icon: "fa-brands fa-telegram", 
-      text: "Личка телеграм", 
-      description: "Зв'яжіться зі мною особисто.",
+      text: "Telegram Direct", 
+      description: "Contact me directly.",
       url: "https://t.me/defexgg",
       color: "#0088cc"
     },
     { 
       icon: "fa-brands fa-instagram", 
-      text: "Інстаграм", 
-      description: "Слідкуйте за нашими фото та відео.",
+      text: "Instagram", 
+      description: "Follow our photos and videos.",
       url: "https://www.instagram.com/defex_tv/",
       color: "#E1306C"
     },
     { 
       icon: "fa-brands fa-youtube", 
-      text: "Ютуб", 
-      description: "Дивіться наші відео на YouTube.",
+      text: "YouTube", 
+      description: "Watch our videos on YouTube.",
       url: "https://www.youtube.com/channel/UC1P4rmz_sIUHGvxLoj1LSQA",
       color: "#FF0000"
     },
     {
       icon: "fa-solid fa-envelope",
       text: "Email Me",
-      description: "Напишіть мені на пошту.",
+      description: "Write me an email.",
       url: "mailto:super.denchuk@gmail.com",
       color: "#D44638"
     }

@@ -206,7 +206,7 @@ function Projects() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="projects-grid"
+              className="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" // Додано grid систему
             >
               {projects.map((project, index) => (
                 <motion.div
