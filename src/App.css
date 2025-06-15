@@ -1,0 +1,157 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+}
+
+/* Header animation wrapper */
+.header_style {
+  max-width: 800px;
+  margin: 2rem auto 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Navbar styling moved here */
+.header_style nav {
+  background-color: #333;
+  padding: 1rem;
+}
+.header_style nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.header_style nav li {
+  list-style: none;
+}
+.header_style nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 200ms;
+}
+.header_style nav a:hover {
+  background: #ff9900;
+  color: #000;
+}
+
+/* Container styling */
+.container {
+  background: #111;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ff9900;
+  padding-bottom: 0.5rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #000;
+  background-color: #ff9900;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 200ms;
+}
+button:hover {
+  background-color: #e68a00;
+}
+
+/* Inputs and textarea accents */
+input[type="text"], textarea {
+  border: 1px solid #444;
+}
+
+/* Links accent */
+a {
+  color: #ff9900;
+}
+
+/* List items */
+ul {
+  padding-left: 1rem;
+}
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Header wrapper for animations */
+.header {
+  max-width: 800px;
+  margin: 2rem auto 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Particles background canvas */
+.particles-background, #tsparticles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1;
+}
+
+#tsparticles canvas {
+  pointer-events: auto;
+}
